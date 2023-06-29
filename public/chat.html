@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat</title>
+  <title>Chat Application</title>
+  <link rel="stylesheet" type="text/css" href="chatstyle.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
 </head>
 <body>
-<script src="/socket.io/socket.io.js"></script>   
+  <div id="chat-container">
+    <div id="message-container"></div>
+    <input type="text" id="message-input" placeholder="Type your message...">
+    <button id="send-button">Send</button>
+    <button id="leave-button">Leave Chat</button>
+  </div>
+
+  <script src="chatscript.js"></script>
 </body>
 </html>
