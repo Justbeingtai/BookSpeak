@@ -35,6 +35,7 @@ CREATE TABLE Chats (
   bookId INT,
   message TEXT,
   timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  chatroom VARCHAR(255),
   FOREIGN KEY (userId) REFERENCES Users(id),
   FOREIGN KEY (bookId) REFERENCES Books(id)
 );
