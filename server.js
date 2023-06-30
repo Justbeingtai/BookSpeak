@@ -50,13 +50,15 @@ socket.on('disconnet', ()=> {
 if (user) {
     io.to(user.chatroom).emit ('message', messageForum(admin, `${user.username} has left the chat`));
 
-// Send users and room info
-io.to(user.chatroom).emit('roomUsers', {
+
+// Send user and room info
+io.to(user.chatroom).emit('chatRoom', {
     room: user.chatroom,
-    user: chatRoom(user.chatroom),
-});
+    users: chatRoom(user.chatroom),
+  });
 }
 });
 });
 
-server.listen(PORT, ()=> console.log('Server running on port ${PORT}'));
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
