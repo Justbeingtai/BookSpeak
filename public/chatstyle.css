@@ -1,34 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f7f7f7;
+  background-color: #1e1f24;
 }
 
-.header {
-  height: 50px;
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
+nav {
+  background-color: #282c34;
+  padding: 20px;
 }
 
-.menu-bar {
-  height: 40px;
-  background-color: #555;
-  color: #fff;
-  padding: 10px;
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a, .dropbtn {
+  font-size: 16px;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #282c34;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #111;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+nav li a:hover, .dropdown:hover .dropbtn {
+  background-color: #111;
 }
 
 #chat-container {
   width: 600px;
   margin: 20px auto;
-  margin-top: 20px; /* Adjust the top margin as needed */
-  margin-bottom: 20px;
   border-radius: 12px;
   background-color: #282c34;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
   animation: fadeIn 0.5s ease;
+}
+
+#header {
+  color: #f39c12;
+  text-align: center;
 }
 
 #message-container {
@@ -42,49 +104,28 @@ body {
   color: #ffffff;
 }
 
+#input-container {
+  position: relative;
+  width: 70%; /* adjust as needed */
+  margin: 0 auto; /* center the input box */
+}
+
 #message-input {
-  width: 95%;
+  width: 100%;
   padding: 10px;
   border: none;
   border-radius: 15px;
   background-color: #1e1f24;
   color: #ffffff;
-  margin-bottom: 20px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
-.button-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 100px;
-}
-
-.send-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  height: 40px;
-  border: none;
-  border-radius: 6px;
-  background-color: #4c6ef5;
-  color: #ffffff;
-  font-weight: bold;
+#send-icon {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #e67e22;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 1px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.send-button:hover {
-  background-color: #3c56d5;
-}
-
-.send-button:active {
-  background-color: #2c46b5;
 }
 
 .leave-button {
@@ -102,6 +143,7 @@ body {
   font-size: 14px;
   letter-spacing: 1px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* add some space above the leave button */
 }
 
 .leave-button:hover {
@@ -110,10 +152,6 @@ body {
 
 .leave-button:active {
   background-color: #d63042;
-}
-
-#chat-container {
-  animation: fadeIn 0.5s ease;
 }
 
 @keyframes fadeIn {
