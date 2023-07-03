@@ -106,7 +106,7 @@ nav li a:hover, .dropdown:hover .dropbtn {
 
 #input-container {
   position: relative;
-  width: 70%; /* adjust as needed */
+  width: 70%;
   margin: 0 auto; /* center the input box */
 }
 
@@ -153,6 +153,8 @@ nav li a:hover, .dropdown:hover .dropbtn {
 .leave-button:active {
   background-color: #d63042;
 }
+
+/* adding keyframes to project */
 
 @keyframes fadeIn {
   0% {
