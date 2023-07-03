@@ -5,9 +5,25 @@ body {
   background-color: #f7f7f7;
 }
 
+.header {
+  height: 50px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+.menu-bar {
+  height: 40px;
+  background-color: #555;
+  color: #fff;
+  padding: 10px;
+}
+
 #chat-container {
   width: 600px;
-  margin: 1px auto;
+  margin: 20px auto;
+  margin-top: 20px; /* Adjust the top margin as needed */
+  margin-bottom: 20px;
   border-radius: 12px;
   background-color: #282c34;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -95,7 +111,6 @@ body {
 .leave-button:active {
   background-color: #d63042;
 }
-
 
 #chat-container {
   animation: fadeIn 0.5s ease;
