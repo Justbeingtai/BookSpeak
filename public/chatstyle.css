@@ -107,7 +107,7 @@ nav li a:hover, .dropdown:hover .dropbtn {
 #input-container {
   position: relative;
   width: 70%;
-  margin: 0 auto; /* center the input box */
+  margin: 0 auto; /* centered the input box */
 }
 
 #message-input {
@@ -143,7 +143,7 @@ nav li a:hover, .dropdown:hover .dropbtn {
   font-size: 14px;
   letter-spacing: 1px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 20px; /* add some space above the leave button */
+  margin-top: 20px; /* add some space above the leave button to look better */
 }
 
 .leave-button:hover {
