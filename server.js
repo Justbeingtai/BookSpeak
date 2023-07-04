@@ -28,52 +28,61 @@ const {
 
 const PORT = process.env.PORT || 3000;
 
-// Enable SSL redirect
+// Enable SSL(Secure Sockets Layer) redirect
 app.use(sslRedirect());
 
 // Connect front-end static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Connect when client connects
-io.on('connection', (socket) => {
-  socket.on('joinChat', ({ username, room }) => {
-    const user = joinChat(socket.id, username, room);
+// Room for each genre
+  const genres = [
+    'Science Fiction',
+    'Mystery/Crime',
+    'Romance',
+    'Horror',
+    'Classics',
+    'LGBTQ+',
+    'Nonfiction',
+    'How-to Guide',
+    'Biography',
+    'Religion/Spirituality',
+  ];
 
-    socket.join(user.room);
+genres.forEach((genre) => {
+  io.of(`/${genre}`).on('connection', (socket) => {
+    socket.on('joinChat', ({ username }) => {
+      const user = joinChat(socket.id, username, genre);
 
-    // Welcome current user and annouce user
-    socket.emit('message', messageForum(admin, 'Welcome to the chat!'));
-    socket.broadcast.to(user.room).emit('message', messageForum(admin, `${user.username} has joined the chat.`));
+      socket.join(user.room);
 
-    // Send user and room info
-    io.to(user.room).emit('chatRoom', {
-      room: user.room,
-      users: chatRoom(user.room),
-    });
-  });
+// Welcome current user and announce user
+      socket.emit('message', messageForum(admin, `Welcome to the ${genre} chat room!`));
+      socket.broadcast.to(user.room).emit('message', messageForum(admin, `${user.username} has joined the chat.`));
 
-  // Listen for Chat messages
-  socket.on('chatMessage', (msg) => {
-    const user = currentUser(socket.id);
-    io.to(user.room).emit('message', messageForum(user.username, msg));
-  });
-
-  // Client disconnects
-  socket.on('disconnect', () => {
-    const user = userLeaves(socket.id);
-
-    if (user) {
-      io.to(user.room).emit('message',
-        messageForum(admin, `${user.username} has left the chat`));
-
-      // Send user and room info
-      io.to(user.room).emit('chatRoom', {
+// Send user and room info
+      io.of(`/${genre}`).to(user.room).emit('chatRoom', {
         room: user.room,
         users: chatRoom(user.room),
       });
-    }
+    });
+
+// Listen for Chat messages
+    socket.on('chatMessage', (msg) => {
+      const user = currentUser(socket.id);
+      io.of(`/${genre}`).to(user.room).emit('message', messageForum(user.username, msg));
+    });
+
+// Client disconnects
+    socket.on('disconnect', () => {
+      const user = userLeaves(socket.id);
+
+      if (user) {
+        io.of(`/${genre}`).to(user.room).emit('message', messageForum(admin, `${user.username} has left the chat`));
+      }
+    });
   });
 });
+
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 

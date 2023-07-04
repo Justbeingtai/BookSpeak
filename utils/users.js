@@ -1,12 +1,12 @@
 const { pool } = require('../config/connection');
 
 // TEST with Default User and test chatroom
-function joinChat(id, username, chatroom) {
+function joinChat(id, username, room) {
   return new Promise((resolve, reject) => {
-    const user = { id, username: username || 'Default User', chatroom: chatroom || 'Default Chatroom' };
+    const user = { id, username: username || 'Default User', room: room || 'Default Chatroom' };
 
     // Insert the user into the Users table or perform any other necessary actions
-    pool.query('INSERT INTO Users (id, username, chatroom) VALUES (?, ?, ?)', [id, user.username, user.chatroom], (error, result) => {
+    pool.query('INSERT INTO Users (id, username, room) VALUES (?, ?, ?)', [id, user.username, user.room], (error, result) => {
       if (error) {
         reject(error);
       } else {
@@ -17,9 +17,9 @@ function joinChat(id, username, chatroom) {
 }
 
 // Join user to the chat //Uncomment for deployed application
-// function joinChat(id, username, chatroom) {
+// function joinChat(id, username, room) {
 //   return new Promise((resolve, reject) => {
-//     const user = { id, username, chatroom };
+//     const user = { id, username, room };
 
 //     // Insert the user into the Users table
 //     pool.query('INSERT INTO Users (id, username) VALUES (?, ?)', [id, username], (error, result) => {
@@ -62,10 +62,10 @@ function userLeaves(id) {
 }
 
 // Get users in a chat room
-function chatRoom(chatroom) {
+function chatRoom(room) {
   return new Promise((resolve, reject) => {
     // Retrieve users from the Users table based on the chatroom
-    pool.query('SELECT * FROM Users WHERE chatroom = ?', [chatroom], (error, result) => {
+    pool.query('SELECT * FROM Users WHERE chatroom = ?', [room], (error, result) => {
       if (error) {
         reject(error);
       } else {
