@@ -16,7 +16,7 @@ CREATE TABLE Books (
   googleBookId INT NOT NULL,
   title VARCHAR(255) NOT NULL,
   author VARCHAR(255) NOT NULL,
-  description TEXT,
+  description TEXT
 );
 
 -- Create the Favorites table to store user's favorite books
