@@ -22,6 +22,7 @@
     </ul>
   </nav>
   <div id="chat-container">
+
     <div id="header">
       <h1>📚 Book Speak 📖  </h1>
     </div>
@@ -35,10 +36,21 @@
     </div>
     <button id="leave-button" class="leave-button">Leave</button>
   </div>
-  <div id="leave-message" style="display: none; text-align: center;">
+<!--   <div id="leave-message" style="display: none; text-align: center;">
     <h2>You've left the chat.</h2>
-  </div>
+  </div> -->
   
+
+    <h2 id="room-name"></h2>
+    <ul id="users"></ul>
+    <div id="message-container"></div>
+    <input type="text" id="message-input" placeholder="Type your message...">
+    <button id="send-button">Send</button>
+    <button id="leave-button">Leave Chat</button>
+  </div>
+ 
+
+<script src="/socket.io/socket.io.js"></script>
   <script src="chatscript.js"></script>
 </body>
 </html>

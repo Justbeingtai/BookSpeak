@@ -1,22 +1,12 @@
-const mysql = require('mysql');
-require('dotenv').config();
+const { pool } = require('../config/connection');
 
-// Create a MySQL connection pool
-const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'process.env.DB_USER',
-  password: 'process.env.DB_PASSWORD',
-  database: 'process.env.DB_NAME',
-},
-console.log('Database connection established.'));
-
-// Join user to the chat
+// TEST with Default User and test chatroom
 function joinChat(id, username, chatroom) {
   return new Promise((resolve, reject) => {
-    const user = { id, username, chatroom };
+    const user = { id, username: username || 'Default User', chatroom: chatroom || 'Default Chatroom' };
 
-    // Insert the user into the Users table
-    pool.query('INSERT INTO Users (id, username) VALUES (?, ?)', [id, username], (error, result) => {
+    // Insert the user into the Users table or perform any other necessary actions
+    pool.query('INSERT INTO Users (id, username, chatroom) VALUES (?, ?, ?)', [id, user.username, user.chatroom], (error, result) => {
       if (error) {
         reject(error);
       } else {
@@ -25,6 +15,22 @@ function joinChat(id, username, chatroom) {
     });
   });
 }
+
+// Join user to the chat //Uncomment for deployed application
+// function joinChat(id, username, chatroom) {
+//   return new Promise((resolve, reject) => {
+//     const user = { id, username, chatroom };
+
+//     // Insert the user into the Users table
+//     pool.query('INSERT INTO Users (id, username) VALUES (?, ?)', [id, username], (error, result) => {
+//       if (error) {
+//         reject(error);
+//       } else {
+//         resolve(user);
+//       }
+//     });
+//   });
+// }
 
 // Get current user
 function currentUser(id) {
