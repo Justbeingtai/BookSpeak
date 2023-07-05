@@ -1,3 +1,4 @@
+-- Active: 1687286696071@@127.0.0.1@3306@bookreview_db
 CREATE DATABASE bookReview_db;
 
 USE bookReview_db;
@@ -7,7 +8,8 @@ CREATE TABLE Users (
   id INT AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(30) NOT NULL,
   email VARCHAR(255) NOT NULL,
-  password VARCHAR(255) NOT NULL
+  password VARCHAR(255) NOT NULL,
+  online BOOLEAN DEFAULT FALSE
 );
 
 -- Create the Books table to store book information
@@ -16,7 +18,7 @@ CREATE TABLE Books (
   googleBookId INT NOT NULL,
   title VARCHAR(255) NOT NULL,
   author VARCHAR(255) NOT NULL,
-  description TEXT,
+  description TEXT
 );
 
 -- Create the Favorites table to store user's favorite books
@@ -28,14 +30,22 @@ CREATE TABLE Favorites (
   FOREIGN KEY (bookId) REFERENCES Books(id)
 );
 
+-- Create the Reviews table to store book reviews
+CREATE TABLE Reviews (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  rating INT NOT NULL,
+  comment TEXT,
+  userId INT,
+  bookId INT,
+  FOREIGN KEY (userId) REFERENCES Users(id),
+  FOREIGN KEY (bookId) REFERENCES Books(id)
+);
+
 -- Create the Chats table to store live chat messages about a book
 CREATE TABLE Chats (
   id INT AUTO_INCREMENT PRIMARY KEY,
   userId INT,
-  bookId INT,
+  room VARCHAR(255),
   message TEXT,
-  timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  chatroom VARCHAR(255),
-  FOREIGN KEY (userId) REFERENCES Users(id),
-  FOREIGN KEY (bookId) REFERENCES Books(id)
+  FOREIGN KEY (userId) REFERENCES Users(id)
 );

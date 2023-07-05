@@ -2,20 +2,20 @@
 <html>
 <head>
   <title>Book Speak</title>
-  <link rel="stylesheet" type="text/css" href="chatstyle.css">
+  <link rel="stylesheet" type="text/css" href="../css/chatstyle.css">
 </head>
 <body>
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="../index.html">Home</a></li>
       <li class="dropdown">
         <a href="javascript:void(0)" class="dropbtn">Menu</a>
         <div class="dropdown-content">
-          <a href="account.html">Account</a>
-          <a href="recommended.html">Recommended</a>
-          <a href="reviews.html">Your Reviews</a>
-          <a href="browse.html">Browse Books</a>
-          <a href="about.html">About Us</a>
+          <a href="./account.html">Account</a>
+          <a href="./recommended.html">Recommended</a>
+          <a href="./reviews.html">Your Reviews</a>
+          <a href="./browse.html">Browse Books</a>
+          <a href="./about.html">About Us</a>
         </div>
       </li>
       <li><a href="books.html">Books</a></li>
@@ -36,10 +36,6 @@
     </div>
     <button id="leave-button" class="leave-button">Leave</button>
   </div>
-<!--   <div id="leave-message" style="display: none; text-align: center;">
-    <h2>You've left the chat.</h2>
-  </div> -->
-  
 
     <h2 id="room-name"></h2>
     <ul id="users"></ul>
@@ -49,8 +45,8 @@
     <button id="leave-button">Leave Chat</button>
   </div>
  
-
+<script src="../js/chatscript.js"></script>
 <script src="/socket.io/socket.io.js"></script>
-  <script src="chatscript.js"></script>
+  
 </body>
 </html>

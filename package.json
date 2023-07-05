@@ -5,16 +5,24 @@
     "main": "server.js",
     "scripts": {
         "start": "node server",
-        "dev": "nodemon server"
+        "dev": "nodemon server",
+        "seed": "node seeds.js"
+
     },
     "author": "Group 6",
     "license": "MIT",
     "dependencies": {
-        "@socket.io/redis-adapter": "^7.1.0",
+        "bcrypt": "^5.1.0",
+        "connect-session-sequelize": "^7.1.7",
         "dotenv": "^14.3.2",
         "express": "^4.17.1",
+        "express-session": "^1.17.3",
+        "express-sslify": "^1.2.0",
+        "heroku-ssl-redirect": "^0.1.1",
         "moment": "^2.24.0",
         "mysql": "^2.18.1",
+        "mysql2": "^3.4.5",
+        "sequelize": "^6.32.1",
         "socket.io": "^4.4.1"
     },
     "devDependencies": {

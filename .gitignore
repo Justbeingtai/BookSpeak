@@ -1,3 +1,5 @@
+.DS_Store
+seeds.js
 # Logs
 logs
 *.log
