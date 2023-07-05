@@ -1,101 +1,75 @@
-// Core requirements
 const path = require('path');
 const http = require('http');
-require('dotenv').config();
-const fetch = require('node-fetch');
-const sslRedirect = require('heroku-ssl-redirect');
-
-// Express Initilization
 const express = require('express');
 const app = express();
-
-// Socket Set up
 const socketio = require('socket.io');
 const server = http.createServer(app);
 const io = socketio(server);
-
-// Chat bot for welcome message
 const admin = 'adminChat';
-
-//  Utility functions
 const messageForum = require('./utils/message');
+require('dotenv').config();
 const {
-  joinChat,
-  currentUser,
-  userLeaves,
-  chatRoom,
-} = require('./utils/users');
-
+    joinChat,
+    currentUser,
+    userLeaves,
+    chatRoom,
+  } = require('./utils/users');
 const PORT = process.env.PORT || 3000;
 
-// Enable SSL(Secure Sockets Layer) redirect
-app.use(sslRedirect());
 
 // Connect front-end static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Room for each genre
-  const genres = [
-    'Science Fiction',
-    'Mystery/Crime',
-    'Romance',
-    'Horror',
-    'Classics',
-    'LGBTQ+',
-    'Nonfiction',
-    'How-to Guide',
-    'Biography',
-    'Religion/Spirituality',
-  ];
+// Connect when client connects
+io.on('connection', (socket) => {
+    socket.on('joinChat', ({ username, chatroom}) => {
+        const user = joinChat(socket.id, username, chatroom);
 
-genres.forEach((genre) => {
-  io.of(`/${genre}`).on('connection', (socket) => {
-    socket.on('joinChat', ({ username }) => {
-      const user = joinChat(socket.id, username, genre);
+        socket.join(user.chatroom);
 
-      socket.join(user.room);
-
-// Welcome current user and announce user
-      socket.emit('message', messageForum(admin, `Welcome to the ${genre} chat room!`));
-      socket.broadcast.to(user.room).emit('message', messageForum(admin, `${user.username} has joined the chat.`));
+// Welcome current user
+socket.emit('message', messageForum(admin, "Welcome to the chat!"));
 
 // Send user and room info
-      io.of(`/${genre}`).to(user.room).emit('chatRoom', {
-        room: user.room,
-        users: chatRoom(user.room),
-      });
+io.to(user.chatroom).emit('chatRoom', {
+    room: user.chatroom,
+    users: chatRoom(user.chatroom),
+});
     });
 
 // Listen for Chat messages
-    socket.on('chatMessage', (msg) => {
-      const user = currentUser(socket.id);
-      io.of(`/${genre}`).to(user.room).emit('message', messageForum(user.username, msg));
-    });
-
-// Client disconnects
-    socket.on('disconnect', () => {
-      const user = userLeaves(socket.id);
-
-      if (user) {
-        io.of(`/${genre}`).to(user.room).emit('message', messageForum(admin, `${user.username} has left the chat`));
-      }
-    });
-  });
+socket.on('chatMessage', (msg) => {
+    const user = currentUser(socket.id);
+    io.to(user.chatroom).emit('message', messageForum(user.username, msg));
 });
 
+// Client disconnects
+socket.on('disconnet', ()=> {
+    const user = userLeaves(socket.id);
+
+if (user) {
+    io.to(user.chatroom).emit ('message', messageForum(admin, `${user.username} has left the chat`));
+
+
+// Send user and room info
+io.to(user.chatroom).emit('chatRoom', {
+    room: user.chatroom,
+    users: chatRoom(user.chatroom),
+  });
+}
+});
+});
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-// fetch for Google Books
-app.get('/api/search', async (req, res) => {
-  const userSearch = req.query.query; 
+app.use(express.static(path.join(__dirname, 'public')));
 
-  try {
-    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${userSearch}&key=${process.env.API_KEY}`);
-    const data = await response.json();
-    res.json(data);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'An error occurred' });
-  }
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
 });
