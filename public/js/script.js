@@ -15,3 +15,20 @@ const searchForBook = () => {
 
 document.querySelector('#search-btn').addEventListener('click', searchForBook);
 
+google.books.load();
+
+function initialize() {
+  var searchInput = 'Harry Potter'; 
+
+  var search = new google.books.Search();
+  search.execute(searchInput, function (books) {
+    for (var i = 0; i < books.length; i++) {
+      var book = books[i];
+      console.log(book.title);
+    }
+  });
+}
+
+
+google.books.setOnLoadCallback(initialize);
+
