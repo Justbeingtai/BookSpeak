@@ -1,24 +1,25 @@
 const messageContainer = document.getElementById('message-container');
 const messageInput = document.getElementById('message-input');
-const sendIcon = document.getElementById('send-icon'); // Corrected this line
+const sendIcon = document.getElementById('send-icon');
 const sendButton = document.getElementById('send-button');
 const leaveButton = document.getElementById('leave-button');
 const roomName = document.getElementById('room-name');
 const currentUser = document.getElementById('users');
+const genreSelect = document.getElementById('genre-select');
+const selectedGenre = genreSelect.value;
 
-const socket = io();
+// Connect to the selected genre room
+const socket = io(`/${selectedGenre}`); 
 
 // TESTING socket with Default Values
-const chatroom = 'Default Chatroom'; 
 const username = 'Test User';
 
-
 // Join chatroom
-socket.emit('joinChat', { username, chatroom }); 
+socket.emit('joinChat', { username, room: selectedGenre });
 
 // Get chatroom and user
-socket.on('chatRoom', ({ chatroom, users }) => { 
-  addRoomName(chatroom);
+socket.on('chatRoom', ({ room, users }) => {
+  addRoomName(room);
   addRoomUsers(users);
 });
 
@@ -30,7 +31,7 @@ socket.on('message', (message) => {
 // Submit message
 function sendMessage() {
   const message = messageInput.value;
-  if (message) {
+  if (message.trim() !== '') {
     socket.emit('chatMessage', message);
     messageInput.value = '';
     sendIcon.innerHTML = '➤'; // Reset the icon
@@ -41,49 +42,17 @@ function sendMessage() {
 sendIcon.addEventListener('click', sendMessage);
 
 // The feature when a user presses the enter/return key
-messageInput.addEventListener('keydown', function(event) {
+messageInput.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
-    event.preventDefault(); // Prevents a new line from being created when pressing Enter
+    event.preventDefault(); 
     sendMessage();
   }
 });
 
 // Code to change send icon
-messageInput.addEventListener('input', function() {
+messageInput.addEventListener('input', function () {
   sendIcon.innerHTML = this.value.trim() !== '' ? '➤' : '➤';
 });
-const chatContainer = document.getElementById('chat-container');
-
-
-// leaveButton.addEventListener('click', function() {
-//   // Hide the chat container
-//   chatContainer.style.display = 'none';
-
-//   // Show a "You've left the chat" message
-//   leaveMessage.style.display = 'block';
-
-
-
-// // Submit message
-// messageInput.addEventListener('submit', (e) => {
-//   e.preventDefault();
-
-// // Get message
-// let msg = e.target.elements.msg.value;
-
-// msg = msg.trim();
-
-// if (!msg) {
-//   return false;
-// }
-
-// //Emit message to server
-// socket.emit('chat', msg);
-
-// Clear input field
-e.target.elements.msg.value = '';
-e.target.elements.focus();
-})
 
 // Adds a message to the message container
 function addMessage(message) {
@@ -96,8 +65,8 @@ function addMessage(message) {
 }
 
 // addRoomName to DOM
-function addRoomName(chatroom) {
-  roomName.innerText = chatroom;
+function addRoomName(room) {
+  roomName.innerText = room;
 }
 
 // Add users to message container
@@ -107,11 +76,11 @@ function addRoomUsers(users) {
     const li = document.createElement('li');
     li.innerText = user.username;
     currentUser.appendChild(li);
-  })
+  });
 }
 
 // user leaves chatroom
-leaveButton.addEventListener('click', function() {
+leaveButton.addEventListener('click', () => {
   socket.emit('disconnect');
   window.location.href = './index.html';
 });
