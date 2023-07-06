@@ -136,13 +136,14 @@ border:2px solid black;
 
 /*main page cards sections */
 .shop,.top,.hot {
-    margin:25px 25px 25px 25%;
+    margin:40px 40px 40px 25%;
     border:2px solid black;
     border-radius:8px;
     width:50%;
 }
 
 .shop a,.top a,.hot a {
+    width:50%;
     padding: 10px 20px;
     background-color:#880fb8;
     color: #fff;
@@ -150,6 +151,32 @@ border:2px solid black;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
+}
+
+.search {
+    margin-left:42%;
+    margin-top:15px;
+    border:2 px solid white;
+}
+
+#test {
+    height:40px;
+    width:300px;
+}
+
+#search-btn {
+    background-color:#880fb8;
+    border:2px solid white;
+    color:white;
+    height:42px;
+    width:100px;
+}
+
+#explore {
+    color:white;
+    margin-left:5%;
+    margin-top:20px;
+    font-size:80px;
 }
 
 /*footer section*/
