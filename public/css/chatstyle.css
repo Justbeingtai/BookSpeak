@@ -32,7 +32,7 @@ header h1 {
   gap: 10px;
 }
 
-#login,#subs {
+#login {
   padding: 5px 10px;
   background-color: #880fb8;
   border: none;
@@ -41,7 +41,7 @@ header h1 {
   text-decoration: none;
 }
 
-#login:hover,#subs:hover {
+#login:hover {
   text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #ffffff, 0 0 80px #ffffff;
   transition: all 0.2s ease-in-out;
 }
@@ -114,7 +114,7 @@ header h1 {
 /*categories section*/
 
 .nav-pills {
-  border:2px solid black;
+border:2px solid black;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
@@ -135,6 +135,7 @@ header h1 {
 .tab-content {
   background-color:white;
 }
+
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
@@ -301,4 +302,5 @@ nav li a:hover, .dropdown:hover .dropbtn {
     transform: translateY(0);
   }
 }
+
 
