@@ -29,7 +29,6 @@ header h1 {
 }
   
 /*menu section*/
-
 .sideMenu {
   background-color:white;
   border:none;
@@ -89,7 +88,6 @@ header h1 {
 }
   
 /*categories section*/
-
 .nav-pills {
   border:2px solid black;
 }
@@ -187,11 +185,7 @@ header h1 {
   height:150px;
 }
 
-
-
-
 /*footer section*/
-
 footer {
   background-color: #ffffff;
   border-top:2px solid black;

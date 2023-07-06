@@ -50,6 +50,7 @@ header {
 }
   
 /*menu section*/
+
 .sideMenu {
     background-color:white;
     border:none;
@@ -78,11 +79,18 @@ header {
 .offcanvas-items {
     color:rgb(255, 255, 255);
     list-style:none;
+}
+
+.offcanvas-items a {
+    text-decoration:none;
+}
+
+.offcanvas-items li {
+    text-decoration:none;
     display:inline-block;
     margin: 20px 0;
     padding-right:50px;
     font-size:40px;
-    font-family:'Courier New';
     color:  #880fb8;
     text-shadow:
       0 0 1px  #880fb8,
@@ -97,16 +105,17 @@ header {
   
 .offcanvas-items li:hover {
     position: relative;
-
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 50px  #ffffff, 0 0 60px #880fb8;
     transition: all 0.2s ease-in-out;
-  }
+}
   
 /*categories section*/
-  .nav-pills {
-    border:2px solid black;
-  }
 
-  .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+.nav-pills {
+border:2px solid black;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color: rgb(255, 255, 255);
     background-color:#880fb8;
 }
@@ -125,23 +134,14 @@ header {
     background-color:white;
 }
 
-/*main page cards sections */
-.shop-now,.top-rated,.whats-hot {
-    margin:25px;
-    align-items:center;
-    justify-content:center;
+/*browse content section*/
+.browse-content h1 {
+    text-align:center;
+    margin-top:20px;
+    font-size:60px;
+    background-color:white;
     border:2px solid black;
-    border-radius:8px;
-}
-
-.shop-now a,.top-rated a,.whats-hot a {
-    padding: 10px 20px;
-    background-color:#880fb8;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
+    margin-bottom:80px;
 }
 
 /*footer section*/
