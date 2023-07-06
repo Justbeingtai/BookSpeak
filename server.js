@@ -38,16 +38,14 @@ const PORT = process.env.PORT || 3000;
 const admin = 'adminChat';
 
 // Handlebars Set up
-const handlebars = require('express-handlebars');
+const exphbs = require('express-handlebars');
+const hbs = exphbs.create({});
 
-app.set('view engine', 'hbs');
-app.engine('hbs', handlebars({
-  layoutsDir: `${__dirname}/views/layouts`,
-  extname: 'hbs'
-}));
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, '/views'));
 
-app.set('views', path.join(__dirname, 'views'));
-
+// Serve static files from the public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
