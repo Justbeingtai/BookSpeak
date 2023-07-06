@@ -7,7 +7,6 @@
         "start": "node server",
         "dev": "nodemon server",
         "seed": "node seeds.js"
-
     },
     "author": "Group 6",
     "license": "MIT",
@@ -16,9 +15,9 @@
         "connect-session-sequelize": "^7.1.7",
         "dotenv": "^14.3.2",
         "express": "^4.17.1",
+        "express-handlebars": "^7.0.7",
         "express-session": "^1.17.3",
-        "express-sslify": "^1.2.0",
-        "heroku-ssl-redirect": "^0.1.1",
+        "handlebars": "^4.7.7",
         "moment": "^2.24.0",
         "mysql": "^2.18.1",
         "mysql2": "^3.4.5",

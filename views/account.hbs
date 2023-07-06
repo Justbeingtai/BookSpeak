@@ -1,0 +1,33 @@
+{{#stylesheet}}
+<link rel="stylesheet" href="../public/css/account.css">
+{{/stylesheet}}
+
+{{#side-menu}}
+<li><a href="chat.html">Live Chat</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="index.html">Home</a></li>
+{{/side-menu}}
+
+
+{{#login-btn}}
+<div class="buttons">
+ <a href="login.html" id="login">LOG IN</a>
+ </div>
+{{/login-btn}}
+
+
+{{#body}}
+ <section class="account-content">
+    <h1>Account</h1>
+      <div class="breakdown">
+        <p>Account name: </p>
+        <button type="button" class="btn btn-primary" id="signOut-btn">Sign Out</button>
+        <button type="button" class="btn btn-primary" id="delete-btn">Delete Account</button>
+      </div>
+    </section>
+{{/body}}
+
+{{#script}}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+{{/script}}

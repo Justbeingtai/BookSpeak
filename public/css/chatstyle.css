@@ -1,106 +1,168 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-body {
-  font-family: 'Montserrat', sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background-color: #1e1f24;
+  font-family: 'Trebuchet MS';
 }
 
-nav {
-  background-color: #282c34;
-  padding: 20px;
+main {
+  background-color:#4d1c64;
+  padding-top:20px;
 }
 
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+header {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-bottom:2px solid black;
 }
 
-nav li {
-  float: left;
+header h1 {
+  padding-right:45%;
+  font-size: 100px;
+  font-weight: bold;
 }
 
-nav li a, .dropbtn {
-  font-size: 16px;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+.buttons {
+  padding-right:25px;
+  font-size:25px;
+  display: flex;
+  gap: 10px;
 }
 
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  font-size: 16px;
+#login {
+  padding: 5px 10px;
+  background-color: #880fb8;
   border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #282c34;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: white;
-  padding: 12px 16px;
+  border-radius: 4px;
+  color: #fff;
   text-decoration: none;
-  display: block;
-  text-align: left;
 }
 
-.dropdown-content a:hover {
-  background-color: #111;
+#login:hover {
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #ffffff, 0 0 80px #ffffff;
+  transition: all 0.2s ease-in-out;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
+#img-tile {
+ height:auto;
+ width:150px;
 }
 
-nav li a:hover, .dropdown:hover .dropbtn {
-  background-color: #111;
+/*menu section*/
+
+.sideMenu {
+  background-color:white;
+  border:none;
+  padding-left:20px;
+  padding-right:20px;
 }
+
+.offcanvas-header {
+  background-color:rgb(255, 255, 255);
+}
+
+.offcanvas-header h2{
+  font-size: 50px;
+  color:rgb(0, 0, 0);
+}
+
+.btn-close {
+  background-color:white;
+}
+
+.offcanvas-body {
+  background-color:rgb(0, 0, 0);
+  border:2px solid white;
+}
+
+.offcanvas-items {
+  color:rgb(255, 255, 255);
+  list-style:none;
+}
+
+.offcanvas-items a {
+  text-decoration:none;
+}
+
+.offcanvas-items li {
+  text-decoration:none;
+  display:inline-block;
+  margin: 20px 0;
+  padding-right:50px;
+  font-size:40px;
+  color:  #880fb8;
+  text-shadow:
+    0 0 1px  #880fb8,
+    0 0 1px  #880fb8,
+    0 0 1px  #880fb8,
+    0 0 1px  #880fb8,
+    0 0 2px  #880fb8,
+    0 0 3px  #880fb8,
+    0 0 10px  #880fb8,
+    0 0 25px  #880fb8;
+}
+
+.offcanvas-items li:hover {
+  position: relative;
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 50px  #ffffff, 0 0 60px #880fb8;
+  transition: all 0.2s ease-in-out;
+}
+
+/*categories section*/
+
+.nav-pills {
+border:2px solid black;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: rgb(255, 255, 255);
+  background-color:#880fb8;
+}
+
+.nav-link {
+  background-color:white;
+  color:black;
+  border:0.5px solid black;
+}
+
+.nav-pills .nav-link {
+  border-radius:0;
+}
+
+.tab-content {
+  background-color:white;
+}
+
+/*chat content*/
 
 #chat-container {
-  width: 600px;
-  margin: 20px auto;
+  width: 90%;
+  margin-left:5%;
+  margin-top:25px;
+  margin-bottom:40px;
   border-radius: 12px;
-  background-color: #282c34;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color:#880fb8;
+  box-shadow: 0 0 25px rgb(255, 255, 255);
   padding: 20px;
   animation: fadeIn 0.5s ease;
 }
 
-#header {
-  color: #f39c12;
+#chat-title h1 {
+  font-size:70px;
+  color: #ffffff;
   text-align: center;
 }
 
 #message-container {
-  height: 400px;
-  overflow-y: auto;
+  height: 390px;
   border-radius: 10px;
   background-color: #1e1f24;
   padding: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+  border:1px solid white;
   color: #ffffff;
 }
 
@@ -113,7 +175,7 @@ nav li a:hover, .dropdown:hover .dropbtn {
 #message-input {
   width: 100%;
   padding: 10px;
-  border: none;
+  border: 1px solid #ffffff;
   border-radius: 15px;
   background-color: #1e1f24;
   color: #ffffff;
@@ -124,34 +186,41 @@ nav li a:hover, .dropdown:hover .dropbtn {
   position: absolute;
   right: 10px;
   bottom: 10px;
-  color: #e67e22;
+  color: #a7068c;
   cursor: pointer;
 }
 
 .leave-button {
   display: block;
-  width: 100%;
-  padding: 10px;
-  border: none;
+  width: 20%;
+  border: 1px solid white;;
   border-radius: 6px;
-  background-color: #ff4757;
+  background-color:#ff3aa6;
   color: #ffffff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-transform: uppercase;
   font-size: 14px;
-  letter-spacing: 1px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-top: 20px; /* add some space above the leave button to look better */
+  margin-left:40%;
+  font-size:25px;
 }
 
 .leave-button:hover {
-  background-color: #e84151;
+  box-shadow: 0 0 10px rgb(255, 255, 255);
 }
 
 .leave-button:active {
-  background-color: #d63042;
+  background-color: #d41fa7;
+}
+
+/*footer section*/
+footer {
+  background-color: #ffffff;
+  border-top:2px solid black;
+}
+
+footer h1 {
+text-align:center;
+font-size: 80px;
+font-weight: bold;
 }
 
 /* adding keyframes to project */
@@ -166,3 +235,4 @@ nav li a:hover, .dropdown:hover .dropbtn {
     transform: translateY(0);
   }
 }
+

@@ -29,13 +29,6 @@ const io = socketio(server);
 
 // Utility functions
 const messageFormat = require('./utils/message');
-// const {
-//   joinChat,
-//   currentUser,
-//   userLeaves,
-//   chatRoom,
-//   getOnlineUsers
-// } = require('./utils/users');
 
 // Controllers
 const routes = require('./controllers/index.js');
@@ -44,7 +37,17 @@ const routes = require('./controllers/index.js');
 const PORT = process.env.PORT || 3000;
 const admin = 'adminChat';
 
-// Connect front-end static files
+// Handlebars Set up
+const handlebars = require('express-handlebars');
+
+app.set('view engine', 'hbs');
+app.engine('hbs', handlebars({
+  layoutsDir: `${__dirname}/views/layouts`,
+  extname: 'hbs'
+}));
+
+app.set('views', path.join(__dirname, 'views'));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
@@ -82,10 +85,30 @@ io.on('connection', (socket) => {
   });
 });
 
+//Static handlebars
+app.get('/index', (req, res) => {
+  res.render('index', { title: 'Main Page' });
+});
+
+app.get('/about', (req, res) => {
+  res.render('about', { title: 'About Us' });
+});
+
+app.get('/account', (req, res) => {
+  res.render('account', { title: 'Account' });
+});
+
+app.get('/chat', (req, res) => {
+  res.render('chat', { title: 'Live Chat' });
+});
+
+app.get('/login', (req, res) => {
+  res.render('login', { title: 'Login' });
+});
+
 
 sequelize.sync({ force: false }).then(() => {
   server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
 });
-

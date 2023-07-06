@@ -1,0 +1,68 @@
+{{#stylesheet}}
+<link rel="stylesheet" href="../public/css/login.css">
+{{/stylesheet}}
+
+{{#side-menu}}
+<li><a href="account.html">Account</a></li>
+<li><a href="chat.html">Live Chat</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="index.html">Home</a></li>
+{{/side-menu}}
+
+{{#body}}
+<section class="title-header">
+      <div class="card" id="title-card">
+        <div class="card-body">
+          Sign-up/Sign-in
+        </div>
+      </div>
+
+      <div class="loginIMG">
+        <img id="ribbon" src="images/LoginRibbon.jpg" alt="logo ribbon image">
+      </div>
+    </section>
+
+    <div class="dual-content">
+      <section class="account-cards">
+        <div class="card" id="sign-card">
+          <div class="card-body">
+            Sign-in
+          </div>
+          <input id="info" type="text" placeholder="Username" aria-label="sign in username">
+          <input id="password" type="text" placeholder="Password" aria-label="sign in password">
+          <button type="button" class="btn btn-primary" id="enter-btn">Enter</button>
+        </div>
+
+        <div class="card" id="sign-card">
+          <div class="card-body">
+            Sign-up
+          </div>
+          <input id="info" type="text" placeholder="Username" aria-label="sign up username">
+          <p>Create a unique username for your account.</p>
+          <input id="password" type="text" placeholder="Password" aria-label="sign up password">
+          <p>Secure your account with a unique password.</p>
+          <button type="button" class="btn btn-primary" id="enter-btn">Enter</button>
+        </div>
+      </section>
+
+      <section class="login-features">
+        <div class="card" id="feature-text">
+          <div class="card-body">
+            <ul id="login-featureText">
+              <li>Live chat with other users</li>
+              <li>A fresh way to discover books from your favorite authors</li>
+              <li>A new way to share</li>
+              <li>More features on the way</li>
+            </ul>
+          </div>
+        </div>
+
+
+      </section>
+    </div>
+{{/body}}
+
+{{#script}}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="./js/script.js"></script> 
+{{/script}}
