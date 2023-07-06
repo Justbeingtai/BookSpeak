@@ -46,5 +46,5 @@ function addMessage(message) {
 // user leaves chatroom
 leaveButton.addEventListener('click', () => {
   socket.emit('disconnect');
-  window.location.replace = '/views/index.html';
+  window.location.href = '/views/index.html';
 });

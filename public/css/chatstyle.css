@@ -185,7 +185,7 @@ border:2px solid black;
 #send-icon {
   position: absolute;
   right: 10px;
-  bottom: 10px;
+  bottom: 40px;
   color: #a7068c;
   cursor: pointer;
 }

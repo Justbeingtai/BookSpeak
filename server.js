@@ -38,21 +38,32 @@ const PORT = process.env.PORT || 3000;
 const admin = 'adminChat';
 
 // Handlebars Set up
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'handlebars');
-const exphbs = require('express-handlebars');
-app.engine(
-  'handlebars',
-  exphbs({
-    defaultLayout: 'main',
-    layoutsDir: path.join(__dirname, 'views/layouts'),
-  })
-);
+// const exphbs = require('express-handlebars');
+// const hbs = exphbs.create({});
 
-app.use(express.static(path.join(__dirname, 'public')));
+// app.engine('handlebars', hbs.engine);
+// app.set('view engine', 'handlebars');
+
+// app.set('views', path.join(__dirname, 'views'));
+
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'handlebars');
+// const exphbs = require('express-handlebars');
+// app.engine(
+//   'handlebars',
+//   exphbs({
+//     defaultLayout: 'main',
+//     layoutsDir: path.join(__dirname, 'views/layouts'),
+//   })
+// );
 
 // Routes
 app.use(routes);
+
+// Serve static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 
 // Socket set up
 io.on('connection', (socket) => {
@@ -66,7 +77,7 @@ io.on('connection', (socket) => {
     socket.emit('message', messageFormat(admin, `Welcome to the chat room!`));
 
     // Broadcast a message to all other connected users
-    socket.broadcast.emit('message', messageFormat(admin, `${user.username} has joined the chat.`));
+    socket.broadcast.emit('message', messageFormat(admin, `${username} has joined the chat.`));
   });
 
   // Listen for chat message events
@@ -86,9 +97,9 @@ io.on('connection', (socket) => {
   });
 });
 
-app.get('/', (req, res) => {
-  res.render('index', { title: 'Chat App' });
-});
+// app.get('/', (req, res) => {
+//   res.render('index', { title: 'Chat App' });
+// });
 
 sequelize.sync({ force: false }).then(() => {
   server.listen(PORT, () => {
