@@ -135,15 +135,14 @@ border:2px solid black;
 }
 
 /*main page cards sections */
-.shop-now,.top-rated,.whats-hot {
-    margin:25px;
-    align-items:center;
-    justify-content:center;
+.shop,.top,.hot {
+    margin:25px 25px 25px 25%;
     border:2px solid black;
     border-radius:8px;
+    width:50%;
 }
 
-.shop-now a,.top-rated a,.whats-hot a {
+.shop a,.top a,.hot a {
     padding: 10px 20px;
     background-color:#880fb8;
     color: #fff;
