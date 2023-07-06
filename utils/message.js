@@ -1,16 +1,17 @@
 const moment = require('moment');
-const { Chats } = require('../models');
+const { Chat } = require('../models');
 
-async function messageForum(username, text, userId, room) {
+
+
+async function messageFormat(username, text,) {
   try {
-    const message = await Chats.create({
-      userId,
-      room,
-      message: text,
-    });
+    // const message = await Chat.create({userId
+    //   userId:1,
+    //   message: text,
+    // });
 
     return {
-      id: message.id,
+      // id: message.id,
       username,
       text,
       time: moment().format('MM/DD/YYYY h:mm'),
@@ -21,7 +22,7 @@ async function messageForum(username, text, userId, room) {
   }
 }
 
-module.exports = messageForum;
+module.exports = messageFormat;
 
 
 // const moment = require('moment');

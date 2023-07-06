@@ -12,7 +12,7 @@ Chat.init(
     },
     userId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     room: {
       type: DataTypes.STRING(255),

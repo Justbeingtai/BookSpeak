@@ -1,4 +1,4 @@
--- Active: 1687286696071@@127.0.0.1@3306@bookreview_db
+-- Active: 1687386738433@@127.0.0.1@3306
 CREATE DATABASE bookReview_db;
 
 USE bookReview_db;

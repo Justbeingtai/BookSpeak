@@ -23,7 +23,7 @@
 // //     });
 // // };
 
-// // document.querySelector('#search-btn').addEventListener('click', searchForBook);
+document.querySelector('#search-btn').addEventListener('click', searchForBook);
 
 
 
