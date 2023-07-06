@@ -1,4 +1,3 @@
-//const socket = io();
 const apiKey = 'AIzaSyAGje7R9dYPvGOyeL-UGfogxVIYAeGdiCQ'
 
 const searchForBook = () => {
