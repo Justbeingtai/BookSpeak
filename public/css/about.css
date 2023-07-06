@@ -145,13 +145,56 @@ border:2px solid black;
 }
 
 #logoIMG {
-    height:80px;
-    width:80px;
+    height:400px;
+    width:400px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:80px;
+    border:4px solid white;
 }
 
+.about-content h2 {
+    color:white;
+    font-size:50px;
+    margin-left:5%;
+    margin-bottom:20px;
+    font-weight:bold;
+
+}
+
+#bio {
+    color:white;
+    margin-left:6%;
+    margin-bottom:5%;
+    font-size:25px;
+    border-left:2px solid white;
+    padding-left:25px;
+    width:85%;
+}
+
+#developers {
+    list-style:none;
+    font-size:25px;
+    margin-bottom:5%;
+}
+
+#developers p {
+    color:white;
+    font-size:25px;
+    border-left:2px solid white;
+    padding-left:25px;
+    margin-left:4.5%;
+}
 
 /*footer section*/
 footer {
     background-color: #ffffff;
     border-top:2px solid black;
+}
+
+footer h1 {
+text-align:center;
+font-size: 80px;
+font-weight: bold;
 }
