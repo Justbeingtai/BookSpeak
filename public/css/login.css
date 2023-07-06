@@ -190,3 +190,9 @@ footer {
   background-color: #ffffff;
   border-top:2px solid black;
 }
+
+footer h1 {
+text-align:center;
+font-size: 80px;
+font-weight: bold;
+}
