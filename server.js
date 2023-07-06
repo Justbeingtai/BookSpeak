@@ -70,6 +70,46 @@ app.get('/', (req, res) => {
 });
 
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
+
+app.post('/register', (req, res) => {
+    const { username, password } = req.body;
+  
+    if (!username || !password) {
+      return res.status(400).send('Username and password are required');
+    }
+  
+    const user = {
+      username,
+      password
+    };
+  
+
+    return res.send('User registered successfully');
+  });
+  
+
+  app.use(express.static(path.join(__dirname, 'public')));
+  
+  
+  server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  
+  app.use(express.static(path.join(__dirname, 'public')));
+  
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  });
+  
+  app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+  
+  
+  
+  
+  
+  
+  
+  

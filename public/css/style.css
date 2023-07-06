@@ -82,31 +82,15 @@ header {
     list-style:none;
 }
 
-.offcanvas-items a {
-    text-decoration:none;
-}
-
-.offcanvas-items li {
-    text-decoration:none;
     display:inline-block;
     margin: 20px 0;
     font-size:40px;
     font-family:'Courier New';
-    color:  #880fb8;
-    text-shadow:
-      0 0 1px  #880fb8,
-      0 0 1px  #880fb8,
-      0 0 1px  #880fb8,
-      0 0 1px  #880fb8,
-      0 0 2px  #880fb8,
-      0 0 3px  #880fb8,
-      0 0 10px  #880fb8,
-      0 0 25px  #880fb8;
 }
   
 .offcanvas-items li:hover {
     position: relative;
-    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 50px  #ffffff, 0 0 60px #880fb8;
+
     transition: all 0.2s ease-in-out;
   }
   
