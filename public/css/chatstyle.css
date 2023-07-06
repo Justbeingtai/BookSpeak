@@ -182,6 +182,14 @@ border:2px solid black;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
+#send-icon {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #a7068c;
+  cursor: pointer;
+}
+
 .leave-button {
   display: block;
   width: 20%;
