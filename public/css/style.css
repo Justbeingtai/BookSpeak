@@ -6,9 +6,8 @@
 
 main {
     background-color:#631388;
+    padding-top:20px;
 }
-
-/*header section*/
 
 header {
     display:flex;
@@ -31,7 +30,7 @@ header {
     gap: 10px;
   }
   
- #login,#subs {
+ #login {
     padding: 5px 10px;
     background-color: #880fb8;
     border: none;
@@ -40,7 +39,7 @@ header {
     text-decoration: none;
   }
 
-#login:hover,#subs:hover {
+#login:hover {
     text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #ffffff, 0 0 80px #ffffff;
     transition: all 0.2s ease-in-out;
   }
@@ -80,12 +79,21 @@ header {
 .offcanvas-items {
     color:rgb(255, 255, 255);
     list-style:none;
-}
-
     display:inline-block;
     margin: 20px 0;
+    padding-right:50px;
     font-size:40px;
     font-family:'Courier New';
+    color:  #880fb8;
+    text-shadow:
+      0 0 1px  #880fb8,
+      0 0 1px  #880fb8,
+      0 0 1px  #880fb8,
+      0 0 1px  #880fb8,
+      0 0 2px  #880fb8,
+      0 0 3px  #880fb8,
+      0 0 10px  #880fb8,
+      0 0 25px  #880fb8;
 }
   
 .offcanvas-items li:hover {
