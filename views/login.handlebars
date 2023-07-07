@@ -1,53 +1,50 @@
-
 <section class="title-header">
-      <div class="card" id="title-card">
-        <div class="card-body">
-          Sign-up/Sign-in
-        </div>
+  <div class="card" id="title-card">
+    <div class="card-body">
+      Sign-up/Sign-in
+    </div>
+  </div>
+
+  <div class="loginIMG">
+    <img id="ribbon" src="images/LoginRibbon.jpg" alt="logo ribbon image">
+  </div>
+</section>
+
+<div class="dual-content">
+  <section class="account-cards">
+    <div class="card" id="sign-card">
+      <div class="card-body">
+        Sign-in
       </div>
-
-      <div class="loginIMG">
-        <img id="ribbon" src="images/LoginRibbon.jpg" alt="logo ribbon image">
-      </div>
-    </section>
-
-    <div class="dual-content">
-      <section class="account-cards">
-        <div class="card" id="sign-card">
-          <div class="card-body">
-            Sign-in
-          </div>
-          <input id="info" type="text" placeholder="Username" aria-label="sign in username">
-          <input id="password" type="text" placeholder="Password" aria-label="sign in password">
-          <button type="button" class="btn btn-primary" id="enter-btn">Enter</button>
-        </div>
-
-        <div class="card" id="sign-card">
-          <div class="card-body">
-            Sign-up
-          </div>
-          <input id="info" type="text" placeholder="Username" aria-label="sign up username">
-          <p>Create a unique username for your account.</p>
-          <input id="password" type="text" placeholder="Password" aria-label="sign up password">
-          <p>Secure your account with a unique password.</p>
-          <button type="button" class="btn btn-primary" id="enter-btn">Enter</button>
-        </div>
-      </section>
-
-      <section class="login-features">
-        <div class="card" id="feature-text">
-          <div class="card-body">
-            <ul id="login-featureText">
-              <li>Live chat with other users</li>
-              <li>A fresh way to discover books from your favorite authors</li>
-              <li>A new way to share</li>
-              <li>More features on the way</li>
-            </ul>
-          </div>
-        </div>
-
-
-      </section>
+      <input id="username" type="text" placeholder="Username" aria-label="sign in username">
+      <input id="password" type="text" placeholder="Password" aria-label="sign in password">
+      <button type="button" class="btn btn-primary" id="sign-in-btn">Enter</button>
     </div>
 
-<script src="/js/script.js"></script> 
+    <div class="card" id="sign-card">
+      <div class="card-body">
+        Sign-up
+      </div>
+      <input id="newUser" type="text" placeholder="Username" aria-label="sign up username">
+      <p>Create a unique username for your account.</p>
+      <input id="newpassword" type="text" placeholder="Password" aria-label="sign up password">
+      <p>Secure your account with a unique password.</p>
+      <button type="button" class="btn btn-primary" id="sign-up-btn">Enter</button>
+    </div>
+  </section>
+
+  <section class="login-features">
+    <div class="card" id="feature-text">
+      <div class="card-body">
+        <ul id="login-featureText">
+          <li>Live chat with other users</li>
+          <li>A fresh way to discover books from your favorite authors</li>
+          <li>A new way to share</li>
+          <li>More features on the way</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="/js/login.js"></script> 

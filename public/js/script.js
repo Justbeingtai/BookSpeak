@@ -1,3 +1,41 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const searchButton = document.getElementById('search-btn');
+    const searchInput = document.getElementById('test');
+  
+    // Search button click event
+    searchButton.addEventListener('click', () => {
+      const searchTerm = searchInput.value.trim();
+      if (searchTerm !== '') {
+        // Perform search logic
+        fetch(`/googleBooks/search?userSearch=${searchTerm}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // Handle the search results
+            console.log(data);
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }
+    });
+  });
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // const searchForBook = () => {
 //   const userSearch = document.querySelector('#test').value;
 //   console.log('userSearch', userSearch);
@@ -23,7 +61,7 @@
 // //     });
 // // };
 
-document.querySelector('#search-btn').addEventListener('click', searchForBook);
+// document.querySelector('#search-btn').addEventListener('click', searchForBook);
 
 
 

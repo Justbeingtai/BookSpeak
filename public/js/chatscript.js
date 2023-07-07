@@ -1,12 +1,8 @@
-const messageContainer = document.getElementById('message-container');
-const messageInput = document.getElementById('message-input');
-const sendIcon = document.getElementById('send-icon');
-const leaveButton = document.getElementById('leave-button');
-
-const currentUser = document.getElementById('users');
-
 // Connect to the socket server
 const socket = io();
+
+// Retrieve userId from local storage
+const userId = localStorage.getItem('userId');
 
 // Listen for incoming messages
 socket.on('message', (message) => {
@@ -17,7 +13,7 @@ socket.on('message', (message) => {
 function sendMessage() {
   const message = messageInput.value;
   if (message.trim() !== '') {
-    socket.emit('chatMessage', message);
+    socket.emit('chatMessage', { userId, message }); 
     messageInput.value = '';
   }
 }
@@ -46,5 +42,5 @@ function addMessage(message) {
 // user leaves chatroom
 leaveButton.addEventListener('click', () => {
   socket.emit('disconnect');
-  window.location.replace = '/views/index.html';
+  window.location.replace('/views/index.html');
 });
