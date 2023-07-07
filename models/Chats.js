@@ -12,7 +12,11 @@ Chat.init(
     },
     userId: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
+      references: {
+        model: 'users',
+        key: 'id',
+      },
     },
     room: {
       type: DataTypes.STRING(255),
