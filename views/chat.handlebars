@@ -1,22 +1,4 @@
-{{#stylesheet}}
-<link rel="stylesheet" href="../public/css/chatstyle.css">
-{{/stylesheet}}
 
-{{#side-menu}}
-<li><a href="account.html">Account</a></li>
-<li><a href="about.html">About Us</a></li>
-<li><a href="index.html">Home</a></li>
-{{/side-menu}}
-
-
-{{#login-btn}}
-  <div class="buttons">
-      <a href="login.html" id="login">LOG IN</a>
-    </div>
-{{/login-btn}}
-
-
-{{#body}}
 <div id="chat-container">
 
     <div id="chat-title">
@@ -29,12 +11,8 @@
       <input id="message-input" type="text" placeholder="Share your thoughts..."  aria-label="your message will go here"/>
       <div id="send-icon">➤</div>
     </div>
-    <a  href="../index.html"><button id="leave-button" class="leave-button">Leave Chat</button></a>
+    <a  href="./index.handlebars"><button id="leave-button" class="leave-button">Leave Chat</button></a>
   </div>
-{{/body}}
 
-{{#script}}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 <script src="/socket.io/socket.io.js"></script>
-<script src="../public/js/chatscript.js"></script>
-{{/script}}
+<script src="/js/chatscript.js"></script>
