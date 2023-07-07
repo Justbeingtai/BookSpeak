@@ -1,5 +1,5 @@
-const { Sequelize } = require('sequelize');
-require('dotenv').config();
+// const { Sequelize } = require('sequelize');
+// require('dotenv').config();
 
 // // Create a Sequelize instance
 // const sequelize = new Sequelize(
@@ -17,7 +17,7 @@ require('dotenv').config();
 
 
 
-const Sequelize = require('sequelize');
+const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
 let sequelize;
