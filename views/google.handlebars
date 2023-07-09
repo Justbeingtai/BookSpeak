@@ -1,5 +1,40 @@
-<section>
+<section class="search">
+        <input type="text" id="test" placeholder="Search" aria-label="search field input">
+        <button id="search-btn">Search</button>
+      </section>
 
+<section class="google-search-content">
+{{#if books}}
+  <h2 class="page-header">Google Books Review</h2>
+  <div class="book-results">
+    {{#each books}}
+      <div class="book-card">
+        {{#if this.volumeInfo.imageLinks.thumbnail}}
+          <img src="{{this.volumeInfo.imageLinks.thumbnail}}" alt="Book Cover" class="book-image">
+        {{else}}
+          <img src="../public/images/BookSpeak logo.jpg" alt="Book Speack Logo" class="book-image">
+        {{/if}}
+        <div class="book-details">
+          <h3>{{this.volumeInfo.title}}</h3>
+          {{#if this.volumeInfo.authors}}
+            <p class="author">Authors: {{this.volumeInfo.authors.join(', ')}}</p>
+          {{/if}}
+          {{#if this.volumeInfo.description}}
+            <p class="google-review">Description: {{this.volumeInfo.description}}</p>
+          {{/if}}
+          {{#if this.volumeInfo.categories}}
+            <p class="category">Category: {{this.volumeInfo.categories.join(', ')}}</p>
+          {{/if}}
+          {{#if this.volumeInfo.averageRating}}
+            <p class="rating">Average Rating: {{this.volumeInfo.averageRating}}/5</p>
+          {{/if}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+{{else}}
+  <p class="no-review">No books found.</p>
+{{/if}}
 </section>
 
-<script src="/js/script.js"></script>
+<script src="/js/google.js"></script>
