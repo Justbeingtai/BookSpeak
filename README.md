@@ -1,26 +1,50 @@
 # Book Speak
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-Book Speak is a web application aimed to connect readers from around the world. Users can discover new books, explore top sellers, receive personalized recommendations, create their own profile, and engage in live chats with other book enthusiasts. The application also provides resources to assist users in buying new books. 
+Book Speak is a web-based platform that allows users to write and share reviews on books they like or dislike. Users can also connect with other users who share similar book preferences and discuss their reviews. The application provides a user-friendly interface, responsive design, and interactive features to enhance the user experience.
 
 ## Installation Instructions
 
-1. Clone the repository to your local machine using `git clone https://github.com/Justbeingtai/BookSpeak.git`.
+To enjoy the web application visit: <br>
 
-2. Move to the application's root directory using `cd BookSpeak`.
-
-3. Install all necessary packages with `npm install`.
-
-4. Run the application locally with `npm start`.
+https://bookspeakreview-69dfe59a4804.herokuapp.com/
+<br>
+To install the code on your location machine:
+* npm -s i
+* create your .env file
+* node server.js to run in local host
 
 ## Usage Guide
 
-Upon successful installation and startup, open your web browser and navigate to `http://localhost:3000` (Have to consult with team, not sure on this part). From the homepage, users can navigate to various sections such as Account, Recommendations, Reviews, Browse Books, Chat and About Us.
+* Search for current top rated books
+* See critics reviews
+* Browse for your next read
+* Create reviews for books you've read
+* Take part in the live chat about your favorite books
+![alt text](public/images/Screenshot%202023-07-09%20004750.png)
+![alt text](public/images/Screenshot%202023-07-09%20004923.png)
 
 ## Credits and Attribution
 
-Book Speak was developed by [Our Team], passionate web developers and book lovers. Additional libraries and frameworks used in this project include React.js, Express.js, Socket.io and Node.js.
+Book Speak was developed by  <li><p>Cheryl Hemphill</p></li>
+        <li><p>John Guerrero</p></li>
+        <li><p>Marquis Cortez</p></li>
+        <li><p>Tai Ho</p></li>
+        <li><p>Eric Lavallee</p></li>
+Technologies include:
+<li>socket.io</li>
+<li>mysql</li>
+<li>mysql2</li>
+<li>sequelize</li>
+<li>bcrypt</li>
+<li>connect-session-sequelize</li>
+<li>dotenv</li>
+<li>express</li>
+<li>express-handlebars</li>
+<li>express-session</li>
+<li>handlebars</li>
 
 ## License Information
 
@@ -32,6 +56,5 @@ Contributions to the project are welcome! Before contributing, please read throu
 
 ## Test Procedures
 
-To run tests on this application, navigate to the root directory and use the command `npm test`. Please ensure all tests pass before making a pull request.
-
-For more detailed information on how the application works and how to contribute, please refer to the `CONTRIBUTING.md` file.
+Tests were run with local server for socket.io. <br>
+Insomnia used for route testing
