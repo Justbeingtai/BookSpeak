@@ -28,11 +28,11 @@ To install the code on your location machine:
 
 ## Credits and Attribution
 
-Book Speak was developed by  <li><p>Cheryl Hemphill</p></li>
-        <li><p>John Guerrero</p></li>
-        <li><p>Marquis Cortez</p></li>
-        <li><p>Tai Ho</p></li>
-        <li><p>Eric Lavallee</p></li>
+Book Speak was developed by  <li>Cheryl Hemphill</li>
+        <li>John Guerrero</li>
+        <li>Marquis Cortez</li>
+        <li>Tai Ho</li>
+        <li>Eric Lavallee</li>
 Technologies include:
 <li>socket.io</li>
 <li>mysql</li>
