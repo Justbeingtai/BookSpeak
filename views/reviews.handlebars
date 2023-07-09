@@ -1,0 +1,52 @@
+<section class="reviews">
+    <h1 "review-header"> Your Book Reviews</h1>
+    
+    {{#if reviews}}
+      {{#each reviews}}
+        <div class="review">
+          <h3 class="review-book-name">{{bookName}}</h3>
+          <p class="rating">Rating: {{rating}}</p>
+          <p class="comment">{{comment}}</p>
+          <button class="review-btns" data-id="{{id}}">Edit</button>
+          <button class="review-btns" data-id="{{id}}">Delete</button>
+        </div>
+      {{/each}}
+    {{else}}
+      <p class="no-review">No reviews found.</p>
+    {{/if}}
+  </section>
+
+  {{#if isAuthenticated}}
+    <section class="add-review">
+      <h2>Add a Review</h2>
+      <form id="review-form">
+        <div>
+          <label for="bookName" class="review-book-name">Book Name:</label>
+          <input type="text" id="bookName" name="bookName" required>
+        </div>
+        <div>
+      <label for="rating" class="rating">Rating:</label>
+      <select id="rating" name="rating" required>
+        <option value="" selected disabled>Select rating</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+        <div>
+          <label for="comment" class="comment">Comment:</label>
+          <textarea id="comment" name="comment" required></textarea>
+        </div>
+        <button type="submit" id="submit-review" class="review-btns">Submit</button>
+      </form>
+    </section>
+  {{else}}
+    <p class="no-review">Please log in to add a review.</p>
+  {{/if}}
+
+
+
+
+<script src="/js/review.js"></script>

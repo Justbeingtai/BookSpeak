@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>BookSpeak</title>
+</head>
+
+<body>
+  <header>
+    <button class="sideMenu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img id="img-tile" src="images/menu tile.jpg" alt="Black tile with three white lines"></button>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+      <h2 class="offcanvas-title" id="offcanvasRightLabel">Menu</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    
+    <div class="offcanvas-body">
+      <ul class="offcanvas-items">
+      <li><a href="/">Home</a></li>
+      <li><a href="/account">Account</a></li>
+      <li><a href="/chat">Live Chat</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/reviews">Reviews</a></li>
+      </ul>
+    </div>
+    </div>
+    
+    <h1>BookSpeak</h1>
+    {{#if logged_in}} 
+    <div class="buttons">
+<a href="/account" id="logout" class="topbtn">LOG OUT</a>
+</div>
+  {{else}} 
+<div class="buttons">
+<a href="/login" id="login" class="topbtn">LOG IN</a>
+</div>
+  {{/if}}
+  </header>
+
+  <main>
+    {{{body}}}
+
+     <footer>
+      <h1>BookSpeak</h1>
+    </footer>
+
+  </main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

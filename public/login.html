@@ -39,37 +39,37 @@
       </div>
 
       <div class="loginIMG">
-        <img id="ribbon" src="images/LoginRibbon.jpg">
+        <img id="ribbon" src="images/LoginRibbon.jpg" alt="logo ribbon image">
       </div>
     </section>
 
     <div class="dual-content">
       <section class="account-cards">
-        <div class="card" id="sign-card">
+        <div class="signcard" id="sign-in-card">
           <div class="card-body">
             Sign-in
           </div>
-          <input id="info" type="text" placeholder="Username">
-          <input id="password" type="text" placeholder="Password">
-          <button type="button" class="btn btn-primary" id="enter-btn">Enter</button>
+          <input class="user-input" id="info" type="text" placeholder="Username" aria-label="sign in username">
+          <input class="user-input" id="password" type="text" placeholder="Password" aria-label="sign in password">
+          <button class="enter" type="button" class="btn btn-primary" id="sign-in-enter-btn">Enter</button>
         </div>
 
-        <div class="card" id="sign-card">
+        <div class="signcard" id="sign-up-card">
           <div class="card-body">
             Sign-up
           </div>
-          <input id="info" type="text" placeholder="Username">
-          <p>Create a unique username for your account.</p>
-          <input id="password" type="text" placeholder="Password">
-          <p>Secure your account with a unique password.</p>
-          <button type="button" class="btn btn-primary" id="enter-btn">Enter</button>
+          <input class="user-input" id="info" type="text" placeholder="Username" aria-label="sign up username">
+          <p class="benefits">Create a unique username for your account.</p>
+          <input class="user-input" id="password" type="text" placeholder="Password" aria-label="sign up password">
+          <p class="benefits">Secure your account with a unique password.</p>
+          <button class="enter" type="button" class="btn btn-primary" id="sign-up-enter-btn">Enter</button>
         </div>
       </section>
 
       <section class="login-features">
-        <div class="card" id="feature-text">
+        <div class="card-feature-txt" id="feature-text">
           <div class="card-body">
-            <ul id="login-featureText">
+            <ul class="lgn-feature-txt" id="login-featureText">
               <li>Live chat with other users</li>
               <li>A fresh way to discover books from your favorite authors</li>
               <li>A new way to share</li>

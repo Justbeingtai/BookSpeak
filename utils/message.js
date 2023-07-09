@@ -1,6 +1,8 @@
 const moment = require('moment');
 const { Chat } = require('../models');
 
+
+
 async function messageFormat(username, text,) {
   try {
     return {
@@ -15,4 +17,15 @@ async function messageFormat(username, text,) {
   }
 }
 
-module.exports = messageFormat;
+async function saveMessage(userId, message) {
+  try {
+      await Chat.create({
+    userId,
+    message
+  });
+} catch (error) {
+console.log(error);
+}
+}
+
+module.exports = { messageFormat, saveMessage };
