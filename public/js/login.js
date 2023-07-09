@@ -7,7 +7,7 @@
   
     if (username && password) {
       // Send a POST request to the login endpoint
-      const response = await fetch('/api/users/login', {
+      const response = await fetch('/api/user/login', {
         method: 'POST',
         body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },
@@ -31,7 +31,7 @@
   
     if (username && password) {
       // Send a POST request to the signup endpoint
-      const response = await fetch('/api/users', {
+      const response = await fetch('/api/user', {
         method: 'POST',
         body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },
@@ -50,42 +50,3 @@
   document.querySelector('#sign-up-enter-btn').addEventListener('click', signupFormHandler);
   
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   const signInButton = document.getElementById('sign-in-enter-btn');
-//   const signUpButton = document.getElementById('sign-up-enter-btn');
-//   const signInInfoInput = document.getElementById('username');
-//   const signInPasswordInput = document.getElementById('password');
-//   const signUpInfoInput = document.getElementById('newUser');
-//   const signUpPasswordInput = document.getElementById('newpassword');
-
-  //   // Sign-in button click event
-//   signInButton.addEventListener('click', () => {
-//     const username = signInInfoInput.value.trim();
-//     const password = signInPasswordInput.value.trim();
-//     if (username !== '' && password !== '') {
-//       // Perform sign-in logic
-//       console.log('Sign-in:', username);
-//         // Clear input fields
-//         signInInfoInput.value = '';
-//         signInPasswordInput.value = '';
-//     }
-//   });
-
-//   // Sign-up button click event
-//   signUpButton.addEventListener('click', () => {
-//     const username = signUpInfoInput.value.trim();
-//     const password = signUpPasswordInput.value.trim();
-//     if (username !== '' && password !== '') {
-//       // Perform sign-up logic
-//       console.log('Sign-up:', username);
-
-//  // Clear input fields
-//       signUpInfoInput.value = '';
-//       signUpPasswordInput.value = '';
-
-//       // Store the userId in local storage
-//       const userId = ''; 
-//       localStorage.setItem('userId', userId);
-//     }
-//   });
-// });
