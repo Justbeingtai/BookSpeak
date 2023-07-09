@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +19,7 @@ header {
   }
   
  header h1 {
-    padding-right:45%;
+    /* padding-right:45%; */
     font-size: 100px;
     font-weight: bold;
   }
@@ -27,10 +28,10 @@ header {
     padding-right:25px;
     font-size:25px;
     display: flex;
-    gap: 10px;
+    /* gap: 10px; */
   }
   
- #login {
+ .topbtn {
     padding: 5px 10px;
     background-color: #880fb8;
     border: none;
@@ -39,7 +40,7 @@ header {
     text-decoration: none;
   }
 
-#login:hover {
+.topbtn:hover {
     text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #ffffff, 0 0 80px #ffffff;
     transition: all 0.2s ease-in-out;
   }
@@ -50,7 +51,6 @@ header {
 }
   
 /*menu section*/
-
 .sideMenu {
     background-color:white;
     border:none;
@@ -110,7 +110,6 @@ header {
 }
   
 /*categories section*/
-
 .nav-pills {
 border:2px solid black;
 }
@@ -153,25 +152,6 @@ border:2px solid black;
     cursor: pointer;
 }
 
-.search {
-    margin-left:42%;
-    margin-top:15px;
-    border:2 px solid white;
-}
-
-#test {
-    height:40px;
-    width:300px;
-}
-
-#search-btn {
-    background-color:#880fb8;
-    border:2px solid white;
-    color:white;
-    height:42px;
-    width:100px;
-}
-
 #explore {
     color:white;
     margin-left:5%;
@@ -189,4 +169,381 @@ footer h1 {
 text-align:center;
 font-size: 80px;
 font-weight: bold;
+}
+
+/*about content section*/
+.about-content h1 {
+    text-align:center;
+    margin-top:20px;
+    font-size:60px;
+    background-color:white;
+    border:2px solid black;
+    margin-bottom:80px;
+}
+
+#logoIMG {
+    height:400px;
+    width:400px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:80px;
+    border:4px solid white;
+}
+
+.about-content h2 {
+    color:white;
+    font-size:50px;
+    margin-left:5%;
+    margin-bottom:20px;
+    font-weight:bold;
+
+}
+
+#bio {
+    color:white;
+    margin-left:6%;
+    margin-bottom:5%;
+    font-size:25px;
+    border-left:2px solid white;
+    padding-left:25px;
+    width:85%;
+}
+
+#developers {
+    list-style:none;
+    font-size:25px;
+    margin-bottom:5%;
+}
+
+#developers p {
+    color:white;
+    font-size:25px;
+    border-left:2px solid white;
+    padding-left:25px;
+    margin-left:4.5%;
+}
+
+/*account content section*/
+.account-content h1 {
+    text-align:center;
+    margin-top:20px;
+    font-size:60px;
+    background-color:white;
+    border:2px solid black;
+    margin-bottom:80px;
+}
+
+.breakdown {
+    color:white;
+    border-left:2px solid white;
+    font-size:50px;
+    font-weight:bold;
+    margin-left:10%;
+    padding-left:20px;
+    margin-bottom:20%;
+}
+
+#signOut-btn, #delete-btn {
+    font-size:25px;
+    background-color:#880fb8;
+    border:2px solid white;
+}
+
+/*chat content*/
+
+#chat-container {
+    width: 90%;
+    margin-left:5%;
+    margin-top:25px;
+    margin-bottom:40px;
+    border-radius: 12px;
+    background-color:#880fb8;
+    box-shadow: 0 0 25px rgb(255, 255, 255);
+    padding: 20px;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  #chat-title h1 {
+    font-size:70px;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  #message-container {
+    height: 390px;
+    border-radius: 10px;
+    background-color: #1e1f24;
+    padding: 10px;
+    margin-bottom: 50px;
+    border:1px solid white;
+    color: #ffffff;
+  }
+  
+  #input-container {
+    position: relative;
+    width: 70%;
+    margin: 0 auto; /* centered the input box */
+  }
+  
+  #message-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+    background-color: #1e1f24;
+    color: #ffffff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #send-icon {
+    position: absolute;
+    right: 10px;
+    bottom: 40px;
+    color: #a7068c;
+    cursor: pointer;
+  }
+  
+  .leave-button {
+    display: block;
+    width: 20%;
+    border: 1px solid white;;
+    border-radius: 6px;
+    background-color:#ff3aa6;
+    color: #ffffff;
+    font-size: 14px;
+    margin-top: 20px; /* add some space above the leave button to look better */
+    margin-left:40%;
+    font-size:25px;
+  }
+  
+  .leave-button:hover {
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+  }
+  
+  .leave-button:active {
+    background-color: #d41fa7;
+  }
+  
+/* adding keyframes to project */
+@keyframe fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    tansform: translateY(0);
+  }
+}
+
+  /*login page content*/
+.title-header {
+    display:inline-flex;
+    width:100%;
+  }
+  
+  #title-card {
+    border-radius:0;
+    border:2px solid black;
+    width:55%;
+    text-align:center;
+    font-style:bold;
+    font-size:50px;
+  }
+  
+  #ribbon {
+    height:120px;
+    padding-left:120px;
+  }
+  
+   /*Account from login page content*/
+   .dual-content {
+    display:inline-flex;
+    width:100%;
+  }
+  
+  .account-cards {
+    width:55%;
+    margin:50px;
+  }
+
+   .signcard {
+    font-style:bold;
+    font-size:50px;
+    border-radius:10px;
+    margin-bottom:50px;
+    padding-left:50px;
+    border:2px solid black;
+    background-color: white;
+  }
+  .user-input{
+    width:80%;
+    margin-left:25px;
+    height:40px;
+    margin-bottom:15px;
+    font-size:25px;
+    border-radius:5px;
+    border:2px solid black;
+    background-color:rgb(230, 230, 230);
+  }
+ 
+  .benefits {
+    font-size:20px;
+  }
+  
+  .enter {
+    width:165px;
+    height:50px;
+    margin-top:20px;
+    margin-left:25%;
+    margin-bottom:35px;
+    font-size:25px;
+    border:2px solid black;
+    background-color:#880fb8;
+  }
+  
+.enter:hover {
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #ffffff, 0 0 80px #ffffff;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .card-feature-txt {
+    background-color:#631388;
+    border:3px dashed white;
+    margin-top:110px;
+    margin-left:150px;
+    width:65%;
+    height:70%;
+  }
+  
+  .lgn-feature-txt {
+    color:white;
+    font-size:30px;
+  }
+  
+ .lgn-feature-txt li {
+    font-weight:bold;
+    margin-bottom:25%;
+  }
+  
+  /* Google Search */
+  .search {
+    display: flex;
+    justify-content: center;
+    /* margin-left:42%; */
+    margin-top:15px;
+    border:2 px solid white;
+}
+
+#test {
+    height:40px;
+    width:300px;
+}
+
+#search-btn {
+    background-color:#880fb8;
+    border:2px solid white;
+    color:white;
+    height:42px;
+    width:100px;
+}
+
+.google-search-content {
+    margin:40px 40px 40px 25%;
+    border:2px solid black;
+    border-radius:8px;
+    width:50%;
+    background: white;
+    padding: 20px;
+}
+
+.page-header {
+    font-size: 45px;
+    text-align: center;
+}
+
+.book-image {
+    width: 50%;
+    height: auto;
+    margin-left: 25%;
+    padding-bottom: 18px;
+}
+
+.author {
+    font-size: 20px;
+}
+
+.google-review {
+    font-size: 25px;
+}
+
+.category, .rating {
+    font-size: 18px;
+}
+
+/* Reviews page */
+ 
+.review-header {
+    text-align:center;
+    margin-top:20px;
+    font-size:60px;
+    background-color:white;
+    border:2px solid black;
+    margin-bottom:30px;
+}
+.posted-review-content, .add-review, .no-review {
+    margin:40px 40px 40px 25%;
+    border:2px solid black;
+    border-radius:8px;
+    width:50%;
+    background: white;
+    padding: 20px;
+}
+
+
+.review-book-name {
+    font-size: 30px;
+}
+
+.rating {
+    font-size: 18px;
+}
+
+.comment {
+    font: 35px;
+}
+
+.review-btns {
+    background-color:#880fb8;
+    border:2px solid white;
+    color:white;
+    height:42px;
+    width:100px;
+}
+
+/* Media Queries for tablet screens */
+@media (max-width: 768px) {
+  header h1 {
+    padding-right: 25%;
+    font-size: 60px
+  }
+
+  .buttons {
+    padding-right: 10px;
+    font-size: 20px;
+  }
+};
+
+/* Media Queries for phone screens */
+@media (max-width: 576px) {
+  header h1 {
+    padding-right: 10%;
+    font-size: 40px;
+  }
+
+  .buttons {
+    padding-right: 5px;
+    font-size: 15px;
+  }
 }
