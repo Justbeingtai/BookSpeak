@@ -1,14 +1,8 @@
 const router = require('express').Router();
-const userRoutes = require('./api/userRoutes');
-const reviewsRoutes = require('./api/reviewsRoutes');
-const googleBooksRoutes = require('./api/googleBooksRoutes');
 const homeRoutes = require('./homeRoutes');
-const chatsRoutes = require('./api/chatsRoutes');
+const api = require('./api/index');
 
-router.use('/users', userRoutes);
-router.use('/reviews', reviewsRoutes);
-router.use('/googleBooks', googleBooksRoutes);
-router.use('/chat', chatsRoutes);
+router.use('/api', api);
 router.use('/', homeRoutes);
 
 module.exports = router;
