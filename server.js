@@ -7,6 +7,10 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 
+// Add the middleware for parsing JSON and URL-encoded data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // Session and Sequelize Setup
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -31,8 +35,7 @@ const io = socketio(server);
 const { messageFormat, saveMessage } = require('./utils/message');
 
 // Controllers
-const routes = require('./controllers/index.js');
-
+const routes = require('./controllers/index');
 
 // Constants
 const PORT = process.env.PORT || 3000;
@@ -84,8 +87,6 @@ io.on('connection', (socket) => {
     io.emit('message', messageFormat(admin, `A user has left the chat`));
   });
 });
-
-
 
 // Start the server
 sequelize.sync({ force: false }).then(() => {

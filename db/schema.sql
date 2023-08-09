@@ -1,4 +1,4 @@
--- Active: 1687386738433@@127.0.0.1@3306@bookreview_db
+-- Active: 1687286696071@@127.0.0.1@3306@bookreview_db
 CREATE DATABASE if not EXISTS bookReview_db;
 
 -- USE bookReview_db;
@@ -7,9 +7,7 @@ CREATE DATABASE if not EXISTS bookReview_db;
 -- CREATE TABLE Users (
 --   id INT AUTO_INCREMENT PRIMARY KEY,
 --   username VARCHAR(30) NOT NULL,
---   email VARCHAR(255) NOT NULL,
 --   password VARCHAR(255) NOT NULL,
---   online BOOLEAN DEFAULT FALSE
 -- );
 
 -- -- Create the Reviews table to store book reviews
