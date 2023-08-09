@@ -17,7 +17,7 @@ router.get('/:room', async (req, res) => {
 router.get('/:room/users', async (req, res) => {
     try {
       const onlineUsers = await User.findAll({
-        where: { room: req.params.room, online: true },
+        where: { room: req.params.room },
         attributes: ['username'],
       });
       res.status(200).json(onlineUsers);

@@ -20,16 +20,20 @@ User.init(
       type: DataTypes.STRING(30),
       allowNull: false,
     },
+    email: {
+      type: DataTypes.STRING, 
+      allowNull: false,
+      unique: true, 
+      validate: {
+        isEmail: true,
+      },
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1],
+        len: [8],
       },
-    },
-    online: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
     },
   },
   {
@@ -62,48 +66,4 @@ User.init(
 );
 
 module.exports = User;
-
-
-
-
-//     password: {
-//       type: DataTypes.STRING,
-//       allowNull: false,
-//       validate: {
-//         len: [1],
-//       },
-//     },
-//   },
-//   {
-//     hooks: {
-//       beforeCreate: async (newUsers) => {
-//         try {
-//           newUsers.password = await bcrypt.hash(newUsers.password, 10);
-//           return newUsers;
-//         } catch (err) {
-//           console.log(err);
-//           return err;
-//         }
-//       },
-//       beforeUpdate: async (updatedUsers) => {
-//         try {
-//           updatedUsers.password = await bcrypt.hash(updatedUsers.password, 10);
-//           return updatedUsers;
-//         } catch (err) {
-//           console.log(err);
-//           return err;
-//         }
-//       },
-//     },
-//     sequelize,
-//     timestamps: false,
-//     freezeTableName: true,
-//     underscored: true,
-//     modelName: 'users',
-//   }
-// );
-
-// module.exports = Users;
-
-
 
