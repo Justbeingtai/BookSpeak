@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/about.css">
-    <script src="https://www.googleapis.com/books/v1/js?key=AIzaSyCIXF963qPgt4iSSaFzW9LjhCjW5eLUEkw"></script>
+    <link rel="stylesheet" href="/css/style.css">
     <title>BookSpeak</title>
 </head>
 
@@ -20,44 +19,38 @@
     
     <div class="offcanvas-body">
       <ul class="offcanvas-items">
-        <li><a href="account.html">Account</a></li>
-        <li><a href="chat.html">Live Chat</a></li>
-        <li><a href="index.html">Home</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/account">Account</a></li>
+      <li><a href="/chat">Live Chat</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/reviews">Reviews</a></li>
       </ul>
-
     </div>
     </div>
     
     <h1>BookSpeak</h1>
+    {{#if logged_in}} 
     <div class="buttons">
-      <a href="login.html" id="login">LOG IN</a>
-    </div>
+<a href="/account" id="logout" class="topbtn">LOG OUT</a>
+</div>
+  {{else}} 
+<div class="buttons">
+<a href="/login" id="login" class="topbtn">LOG IN</a>
+</div>
+  {{/if}}
   </header>
-  
-  <main>
-    <section class="about-content">
-      <h1>About Us</h1>
-      <img src="images/BookSpeak logo.jpg" id="logoIMG" alt="book with star and chat bubble">
-      <h2>About BookSpeak</h2>
-      <p id="bio">BookSpeak came to life on July 6th, 2023, as a forum and online library to discover, review, and talk about your favorite stories.
-        With it's calm yet intellectual aesthetic, BookSpeak aims to create a website that is accessible to readers big and small, and to rekindle the 
-        wonder of reading to those it has been lost upon.
-      </p>
-      <h2>Meet The Team</h2>
-      <ul id="developers">
-        <li><p>Cheryl Hemphill</p></li>
-        <li><p>John Guerrero</p></li>
-        <li><p>Marquis Cortez</p></li>
-        <li><p>Tai Ho</p></li>
-        <li><p>Eric Lavallee</p></li>
-      </ul>
-    </section>
 
-    <footer>
+  <main>
+    {{{body}}}
+
+     <footer>
       <h1>BookSpeak</h1>
     </footer>
-  
+
+  </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-<script src="./js/script.js"></script>
+<script src="/js/main.js"></script>
+
+
 </body>
 </html>
